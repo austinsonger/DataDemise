@@ -1,24 +1,31 @@
-# What is this?
-This is a teeny tiny template repo for my own personal use. This setup meant for a fullstack Go project with templating support with HTMX. 
+# DataDemise
+ Cloud Data Destruction Certification/Verification
 
-This repo's goal is to provide opinionated, but tiny template that ready to be used to develop go web apps. I would only provide what's important (for me) and omit what's not. 
+## Components:
+- Understanding Cloud Providers APIs: I'll need to interact with APIs of different cloud providers to track and confirm data destruction.
+- Security and Authentication: Secure handling of credentials and authentication tokens for accessing cloud resources is crucial.
+- Data Destruction Verification: Implementing a method to verify that data has been completely destroyed.
+- Certificate Generation: Designing and generating certificates that are credible and contain all necessary information.
+- User Interface: A user-friendly interface for managing the process.
+- Backend Logic: Developing the backend logic to handle requests, process data destruction, and generate certificates.
 
-## What this repo can handle out of the box
-- Hot Reload via [Air](https://github.com/cosmtrek/air) just `make-run`
-- Quick Local dev setup including DB via `make setup-local`
-- ORM ready using [GORM](https://gorm.io/)
-- Routing ready using [Labstack Echo](https://github.com/labstack/echo)
-- TempL is used to templating purpose, see: [TempL Getting Started](https://templ.guide)
-- [TailwindCSS](https://tailwindcss.com/) Ready! 
-- Exposed directory for resources in the `dist` directory
 
-## What this repo will never handle
-- Deployment beyond simple Dockerfile
-- Testing
+## GO-Gin-Gonic with HTMX
 
-## Prerequisites
-- [Air](https://github.com/cosmtrek/air)
-- [Docker](https://docs.docker.com/get-started/)
+ 1. **Go (Gin-Gonic) for Backend Development**
+    - **Performance and Concurrency**: Go is known for its high performance and efficient concurrency handling. This makes it suitable for handling high-throughput and concurrent tasks, which could be beneficial if your application needs to manage multiple data destruction requests simultaneously.
+    - **Cloud Integration**: Go has good support for cloud service APIs. Packages like `aws-sdk-go`, `google-cloud-go`, and `azure-sdk-for-go` can be used for interacting with AWS, Google Cloud, and Azure services respectively. This is crucial for managing object, file, and block storage across different cloud platforms.
+    - **Security and Authentication**: Go provides robust tools and libraries for secure communication and data handling, which are essential for both the security of your application and the safe management of cloud service credentials.
 
-## Getting Started
-Create `.env` file (see `env.sample`), then run `make local-setup` and `make run`. That's it :)
+1. **HTMX for Frontend Interaction**
+    - **Simplicity and Interactivity**: HTMX remains a great choice for adding interactivity to your web pages without the need for a complex JavaScript framework. It can handle dynamic content updates, form submissions, and other interactive elements smoothly, which is vital for the user interface of your dashboard.
+    - **Workflow Management**: For the approval and data destruction process, HTMX can effectively manage asynchronous updates, reflecting the real-time status of requests and approvals in the user interface.
+
+2. **Certificate Generation**
+    - Go can be used to generate certificates after data destruction. You could use libraries for creating PDFs or other document formats, filling in details like Cloud Provider, Service, Media Type, etc., as required by your application.
+
+1. **Security and Compliance**
+    - Go's standard library and external packages offer strong security features for web applications. You can implement mechanisms for secure authentication, data encryption, and logging, which are important for compliance and audit trails.
+
+
+
