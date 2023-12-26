@@ -10,9 +10,9 @@
 - Backend Logic: Developing the backend logic to handle requests, process data destruction, and generate certificates.
 
 
-## GO-Gin-Gonic with HTMX
+## GO-Echo with HTMX
 
- 1. **Go (Gin-Gonic) for Backend Development**
+ 1. **Go (Echo) for Backend Development**
     - **Performance and Concurrency**: Go is known for its high performance and efficient concurrency handling. This makes it suitable for handling high-throughput and concurrent tasks, which could be beneficial if your application needs to manage multiple data destruction requests simultaneously.
     - **Cloud Integration**: Go has good support for cloud service APIs. Packages like `aws-sdk-go`, `google-cloud-go`, and `azure-sdk-for-go` can be used for interacting with AWS, Google Cloud, and Azure services respectively. This is crucial for managing object, file, and block storage across different cloud platforms.
     - **Security and Authentication**: Go provides robust tools and libraries for secure communication and data handling, which are essential for both the security of your application and the safe management of cloud service credentials.
