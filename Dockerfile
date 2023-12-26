@@ -1,24 +1,37 @@
-FROM golang:1.19.4-alpine3.17 as builder
 
-RUN apk update && apk add git make bash
+# Start from the official Golang image to build the binary.
+FROM golang:alpine as builder
 
+# Enable Go modules.
+ENV GO111MODULE=on
+
+# Set the working directory outside $GOPATH to enable the support for modules.
 WORKDIR /app
 
-COPY . ./
+# Copy go mod and sum files to download dependencies.
+COPY go.mod go.sum ./
 
-# Do dep installs outside, due to private git modules
-# RUN make dep
+# Download all dependencies.
+RUN go mod download
 
-RUN make build
+# Copy the source from the current directory to the working directory inside the container.
+COPY . .
 
+# Build the Go app.
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o main .
+
+# Start a new stage from scratch for a smaller final image.
 FROM alpine:latest
 
-WORKDIR /app
+RUN apk --no-cache add ca-certificates
 
-COPY --from=builder /app/main /app/
-COPY --from=builder /app/public /app/public
-COPY --from=builder /app/dist /app/dist
+WORKDIR /root/
 
-EXPOSE 4001
+# Copy the pre-built binary file from the previous stage.
+COPY --from=builder /app/main .
 
-CMD [ "/app/main" ]
+# Command to run the executable.
+CMD ["./main"]
+
+# Expose port 8080 to the outside world.
+EXPOSE 8080
