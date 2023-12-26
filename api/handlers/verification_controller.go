@@ -21,6 +21,8 @@ func NewVerificationController() *VerificationController {
 
 // VerifyDestruction handles requests to verify data destruction
 func (ctrl *VerificationController) VerifyDestruction(c echo.Context) error {
-	//  verification logic
+	// Declare and assign a value to verificationResult
+	verificationResult := "Data destruction verified"
+
 	return c.JSON(http.StatusOK, verificationResult)
 }

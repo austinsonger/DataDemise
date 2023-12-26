@@ -22,11 +22,13 @@ func NewCloudProvidersController() *CloudProvidersController {
 // ListProviders handles GET requests to list cloud providers
 func (ctrl *CloudProvidersController) ListProviders(c echo.Context) error {
 	// logic to list cloud providers
+	providers := []string{"aws", "azure", "gcp"}
 	return c.JSON(http.StatusOK, providers)
 }
 
 // InitiateDestruction handles POST requests to initiate data destruction
 func (ctrl *CloudProvidersController) InitiateDestruction(c echo.Context) error {
 	// logic to start data destruction
+	response := "Data destruction initiated"
 	return c.JSON(http.StatusOK, response)
 }
