@@ -1,31 +1,38 @@
 # DataDemise
  Cloud Data Destruction Certification/Verification
 
+## Overview
+DataDemise is an application for certifying and verifying the destruction of data stored across various cloud providers. It ensures secure and verifiable destruction of data, providing certificates as proof of destruction.
+
 ## Components:
-- Understanding Cloud Providers APIs: I'll need to interact with APIs of different cloud providers to track and confirm data destruction.
-- Security and Authentication: Secure handling of credentials and authentication tokens for accessing cloud resources is crucial.
-- Data Destruction Verification: Implementing a method to verify that data has been completely destroyed.
-- Certificate Generation: Designing and generating certificates that are credible and contain all necessary information.
-- User Interface: A user-friendly interface for managing the process.
-- Backend Logic: Developing the backend logic to handle requests, process data destruction, and generate certificates.
+- **Understanding Cloud Providers APIs**: Interaction with APIs of AWS, Google Cloud, and Azure to track and confirm data destruction.
+- **Security and Authentication**: Enhanced security handling with custom implementations for credential management, encryption, and secure communication.
+- **Data Destruction Verification**: Service implementations for verifying the complete destruction of data across different cloud platforms.
+- **Certificate Generation**: Automated generation of credible certificates post data destruction using Go, with details like Cloud Provider, Service, Media Type, etc.
+- **User Interface**: A user-friendly interface using HTMX for managing the data destruction process, with real-time updates and interactive elements.
+- **Backend Logic**: Robust backend logic in Go (using the Echo framework) to handle requests, process data destruction, and generate certificates.
+
+## Recent Updates
+1. **GO-Echo with HTMX**: 
+   - Leveraging Go for backend development, with a focus on performance, cloud integration, and security.
+   - Using HTMX for dynamic frontend interaction and workflow management.
+
+2. **Containerization with Docker**:
+   - Docker setup for building and running the Go application.
+   - `docker-compose.yaml` configuration for orchestrating the Go service and the HTMX frontend served via Nginx.
+
+3. **Security Enhancements**:
+   - Added a `security` directory in the project structure, containing modules like `auth.go`, `credentials.go`, `encryption.go`, and others for comprehensive security handling.
+
+4. **API Development**:
+   - Developed `api/handlers` and `api/services` with controllers and services for cloud provider interactions, data verification, and certificate generation.
+
+5. **Verification Service**:
+   - Implemented `VerificationService` interface and specific services like `AWSVerificationService` to check the complete destruction of data.
 
 
-## GO-Echo with HTMX
 
- 1. **Go (Echo) for Backend Development**
-    - **Performance and Concurrency**: Go is known for its high performance and efficient concurrency handling. This makes it suitable for handling high-throughput and concurrent tasks, which could be beneficial if your application needs to manage multiple data destruction requests simultaneously.
-    - **Cloud Integration**: Go has good support for cloud service APIs. Packages like `aws-sdk-go`, `google-cloud-go`, and `azure-sdk-for-go` can be used for interacting with AWS, Google Cloud, and Azure services respectively. This is crucial for managing object, file, and block storage across different cloud platforms.
-    - **Security and Authentication**: Go provides robust tools and libraries for secure communication and data handling, which are essential for both the security of your application and the safe management of cloud service credentials.
 
-1. **HTMX for Frontend Interaction**
-    - **Simplicity and Interactivity**: HTMX remains a great choice for adding interactivity to your web pages without the need for a complex JavaScript framework. It can handle dynamic content updates, form submissions, and other interactive elements smoothly, which is vital for the user interface of your dashboard.
-    - **Workflow Management**: For the approval and data destruction process, HTMX can effectively manage asynchronous updates, reflecting the real-time status of requests and approvals in the user interface.
-
-2. **Certificate Generation**
-    - Go can be used to generate certificates after data destruction. You could use libraries for creating PDFs or other document formats, filling in details like Cloud Provider, Service, Media Type, etc., as required by your application.
-
-1. **Security and Compliance**
-    - Go's standard library and external packages offer strong security features for web applications. You can implement mechanisms for secure authentication, data encryption, and logging, which are important for compliance and audit trails.
 
 
 
