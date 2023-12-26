@@ -31,6 +31,91 @@ DataDemise is an application for certifying and verifying the destruction of dat
    - Implemented `VerificationService` interface and specific services like `AWSVerificationService` to check the complete destruction of data.
 
 
+### File Structure
+
+```
+├── Dockerfile
+├── Makefile
+├── README.md
+├── _README.md
+├── api
+│   ├── handlers
+│   │   ├── certificate_controller.go
+│   │   ├── cloud_providers_controller.go
+│   │   └── verification_controller.go
+│   └── services
+│       ├── aws.go
+│       ├── aws_verification_service.go
+│       ├── azure.go
+│       ├── azure_verification_service.go
+│       ├── gcp.go
+│       ├── gcp_verification_service.go
+│       ├── service_factory.go
+│       └── verification_service.go
+├── certificates
+│   └── generator.go
+├── config
+│   └── config.go
+├── db
+│   ├── database.go
+│   ├── migration
+│   │   └── migration.go
+│   └── seed
+│       └── seed.go
+├── dist
+│   ├── favicon.ico
+│   ├── htmx.min.js
+│   ├── main.css
+│   └── tailwind.css
+├── docker-compose.yaml
+├── docs
+│   ├── Building the Application.md
+│   └── Frontend with HTMX.md
+├── env.sample
+├── go.mod
+├── go.sum
+├── main.go
+├── public
+│   ├── base.templ
+│   ├── base_templ.go
+│   ├── index.templ
+│   └── index_templ.go
+├── tailwind.config.js
+├── template
+│   └── template.go
+└── utils
+    ├── constants
+    │   └── common.go
+    ├── errs
+    │   └── errs.go
+    ├── markd
+    │   └── markdown.go
+    ├── resp
+    │   ├── errors.go
+    │   └── response.go
+    ├── routing
+    │   └── setup.go
+    ├── scopes
+    │   └── pagination.go
+    ├── security
+    │   ├── access_control.go
+    │   ├── api_security.go
+    │   ├── audit_log.go
+    │   ├── auth.go
+    │   ├── config.go
+    │   ├── credentials.go
+    │   ├── encryption.go
+    │   ├── sanitizer.go
+    │   ├── security_errors.go
+    │   ├── security_test.go
+    │   ├── tls_config.go
+    │   └── utils.go
+    ├── tern
+    │   └── ternary.go
+    └── typeext
+        └── jsonb.go
+```
+
 
 
 
