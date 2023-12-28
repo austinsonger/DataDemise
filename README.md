@@ -5,7 +5,7 @@
 DataDemise is an application for certifying and verifying the destruction of data stored across various cloud providers. It ensures secure and verifiable destruction of data, providing certificates as proof of destruction.
 
 ## Components:
-- **Understanding Cloud Providers APIs**: Interaction with APIs of AWS, Google Cloud, and Azure to track and confirm data destruction.
+- **Cloud Providers APIs**: Interaction with APIs of AWS, Google Cloud, and Azure to track and confirm data destruction.
 - **Security and Authentication**: Enhanced security handling with custom implementations for credential management, encryption, and secure communication.
 - **Data Destruction Verification**: Service implementations for verifying the complete destruction of data across different cloud platforms.
 - **Certificate Generation**: Automated generation of credible certificates post data destruction using Go, with details like Cloud Provider, Service, Media Type, etc.
